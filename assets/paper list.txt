@@ -1,0 +1,19 @@
+Path planning for unmanned surface vehicle based on predictive artificial potential field
+
+Outracing human racers with model-based planning and control for time-trial racing
+
+Double-iterative gaussian process regression for modeling error compensation in autonomous racing
+
+Improving vehicle trajectory prediction with online learning
+
+Skill-critic: Refining learned skills for hierarchical reinforcement learning
+
+Gamma: Generalizable articulation modeling and manipulation for articulated objects
+
+Fair Play in the Fast Lane: Integrating Sportsmanship into Autonomous Racing Systems
+
+Generalizable Articulated Object Perception with Superpoints
+
+CHD: Coupled Hierarchical Diffusion for Long-Horizon Tasks
+
+Vla-touch: Enhancing vision-language-action models with dual-level tactile feedback
