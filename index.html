@@ -57,10 +57,10 @@
     /* ===========================
        NEWS (simple list)
        =========================== */
-    .news-scroll{max-height:205px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+    .news-scroll{max-height:205px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#9aa0ad transparent}
     .news-scroll::-webkit-scrollbar{width:6px}
     .news-scroll::-webkit-scrollbar-track{background:transparent}
-    .news-scroll::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+    .news-scroll::-webkit-scrollbar-thumb{background:#9aa0ad;border-radius:3px}
     .news-scroll::-webkit-scrollbar-thumb:hover{background:var(--muted)}
     .news-list{list-style:none;padding-left:0;margin:0}
     .news-list li{display:flex;gap:12px;padding:10px 0;border-bottom:1px dashed var(--rule)}
@@ -156,6 +156,15 @@
     }
 
 
+
+    /* ===========================
+       RESEARCH scroll container
+       =========================== */
+    .proj-scroll{overflow-y:auto;scrollbar-width:thin;scrollbar-color:#9aa0ad transparent}
+    .proj-scroll::-webkit-scrollbar{width:6px}
+    .proj-scroll::-webkit-scrollbar-track{background:transparent}
+    .proj-scroll::-webkit-scrollbar-thumb{background:#9aa0ad;border-radius:3px}
+    .proj-scroll::-webkit-scrollbar-thumb:hover{background:var(--muted)}
 
     /* ===========================
        Responsive adjustments
@@ -328,6 +337,7 @@
 
       <p> * Equally contributed, ✝ corresponding author.</p>
 
+      <div class="proj-scroll" id="proj-scroll">
       <!-- 2026 -->
       <article class="proj">
         <a class="teaser" href="#" aria-label="Project website">
@@ -624,6 +634,8 @@
         </div>
       </article>
 
+      </div><!-- /proj-scroll -->
+
     <hr class="rule"/>
 
     
@@ -641,8 +653,22 @@
   </div>
 
   <script>
-    // Tiny enhancement: auto-update footer year.
+    // Auto-update footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Set proj-scroll height dynamically
+    const projScroll = document.getElementById('proj-scroll');
+    if (projScroll) {
+      const sampleItems = document.querySelectorAll('#research > .proj');
+      if (sampleItems.length >= 3) {
+        const avgH = Array.from(sampleItems).slice(0, 3).reduce((s, el) => {
+          return s + el.getBoundingClientRect().height + 14;
+        }, 0) / 3;
+        projScroll.style.maxHeight = Math.round(avgH * 3) + 'px';
+      } else {
+        projScroll.style.maxHeight = '560px';
+      }
+    }
   </script>
 </body>
 </html>
