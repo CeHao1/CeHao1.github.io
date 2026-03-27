@@ -218,7 +218,8 @@
           <a href="https://haroldsoh.com/"> Prof. Harold Soh </a>.
           Before NUS, I studied at the University of California, Berkeley as a PhD student in 
           <a href="https://msc.berkeley.edu/"> Prof. Masayoshi Tomizuka</a>'s lab. 
-          I obtained MS and BS degrees from Beihang University, supervised by Prof. Jia Song.
+          I obtained MS and BS degrees from Beihang University, supervised by
+          <a href="https://shi.buaa.edu.cn/songjia/zh_CN/index.htm">Prof. Jia Song</a>.
         </p>
         <!-- <p>
           Currently, I am working on <b>TOPIC</b> and collaborating with
@@ -248,6 +249,10 @@
       <h2>News</h2>
       <div class="news-scroll">
       <ul class="news-list">
+        <li>
+          <span class="news-date">2026-03</span>
+          <span>ForceVLA2 was accepted to CVPR 2026.</span>
+        </li>
         <li>
           <span class="news-date">2026-01</span>
           <span>SkillMoEPolicy (SMP) was accepted to ICLR 2026.</span>
@@ -405,9 +410,11 @@
         </a>
         <div class="info">
           <h3>ForceVLA2: Unleashing Hybrid Force-Position Control with Force Awareness for Contact-Rich Manipulation</h3>
-          <p class="meta"><b>Venue/Year:</b> NeurIPS 2026</p>
+          <p class="meta"><b>Venue/Year:</b> CVPR 2026</p>
           <p>Hongquan Zhang, Jinda Du, Yunsong Zhou, Jia Zeng, <b>Ce Hao</b>, Jieji Ren, Qiaojun Yu, Cewu Lu, Yu Qiao, Jiangmiao Pang</p>
           <div class="actions">
+            <a class="btn" href="https://sites.google.com/view/force-vla2/home" target="_blank" rel="noopener">Website</a>
+            <a class="btn" href="https://arxiv.org/abs/2603.15169" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
@@ -422,6 +429,7 @@
           <p class="meta"><b>Venue/Year:</b> Under review 2026</p>
           <p>Xuanran Zhai, Zekai Huang, Longyan Wu, Qianyou Zhao, Qiaojun Yu, Jieji Ren, <b>Ce Hao</b>, Harold Soh</p>
           <div class="actions">
+            <a class="btn" href="https://arxiv.org/abs/2603.03836" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
@@ -435,6 +443,7 @@
           <p class="meta"><b>Venue/Year:</b> Under review 2026</p>
           <p>Tutian Tang, Xingyu Ji, Wanli Xing, <b>Ce Hao</b>, Wenqiang Xu, Lin Shao, Cewu Lu, Qiaojun Yu, Jiangmiao Pang, Kaifeng Zhang</p>
           <div class="actions">
+            <a class="btn" href="https://arxiv.org/abs/2603.08122" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
@@ -659,7 +668,7 @@
     // Set proj-scroll height dynamically
     const projScroll = document.getElementById('proj-scroll');
     if (projScroll) {
-      const sampleItems = document.querySelectorAll('#research > .proj');
+      const sampleItems = document.querySelectorAll('#proj-scroll > .proj');
       if (sampleItems.length >= 3) {
         const avgH = Array.from(sampleItems).slice(0, 3).reduce((s, el) => {
           return s + el.getBoundingClientRect().height + 14;
