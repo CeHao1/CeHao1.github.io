@@ -6,14 +6,13 @@
   <meta name="google-site-verification" content="Mdbl9HELJqEvdpoEk00km3b9gQHmvCnyG4TyIFU2E2s" />
   
   <title>Ce Hao</title>
-  <meta name="description" content="Ce Hao's personal website — projects, notes, and links. " />
+  <meta name="description" content="Ce Hao's personal website — projects, notes, and links." />
 
   <!-- =======================================================================
-       META / SEO (edit these)
+       META / SEO
   ======================================================================== -->
-  <meta name="description" content="YOUR NAME — research group website: news, people, projects, and opportunities.">
-  <meta property="og:title" content="YOUR NAME · Research Group">
-  <meta property="og:description" content="News · People · Research · Join us">
+  <meta property="og:title" content="Ce Hao · Robotics Researcher">
+  <meta property="og:description" content="Ce Hao's personal website — research, news, and contact.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cehao1.github.io">
   <!-- <link rel="icon" href="/assets/favicon.png"> -->
@@ -47,7 +46,7 @@
        BASIC INFO (About)
        =========================== */
     .profile{display:grid;grid-template-columns:300px 1fr;gap:20px;align-items:start}
-    .avatar{width:300px; height: 400px; aspect-ratio:1/1;border-radius:12px;object-fit:cover;background:#ddd}
+    .avatar{width:300px; height: 400px; border-radius:12px;object-fit:cover;background:#ddd}
     .subtitle{color:var(--muted);margin-top:-6px}
     .quicklinks{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
     .btn{display:inline-block;padding:6px 12px;border:1px solid var(--rule);border-radius:8px;background:#fff}
@@ -58,6 +57,11 @@
     /* ===========================
        NEWS (simple list)
        =========================== */
+    .news-scroll{max-height:205px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+    .news-scroll::-webkit-scrollbar{width:6px}
+    .news-scroll::-webkit-scrollbar-track{background:transparent}
+    .news-scroll::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+    .news-scroll::-webkit-scrollbar-thumb:hover{background:var(--muted)}
     .news-list{list-style:none;padding-left:0;margin:0}
     .news-list li{display:flex;gap:12px;padding:10px 0;border-bottom:1px dashed var(--rule)}
     .news-date{white-space:nowrap;color:var(--muted);min-width:92px}
@@ -92,16 +96,6 @@
       background: #ddd;
       overflow: hidden;                   /* ensures round corners for media */
     }
-
-    /* media sizing – taller teaser, visually balanced with text block */
-    <!-- .teaser img,
-    .teaser video {
-      width: 100%;
-      height: 150px;                      /* increased from 100px for better proportion */
-      object-fit: cover;                  /* center-crop without distortion */
-      border-radius: 6px;
-      display: block;
-    } -->
 
     .teaser img,
     .teaser video {
@@ -164,38 +158,14 @@
 
 
     /* ===========================
-       PEOPLE (cards grid, compact)
-       =========================== */
-    .section-desc{color:var(--muted);margin-top:-6px}
-    .people-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px} /* tighter grid gap */
-    .person{
-      background:var(--card);
-      border:1px solid var(--rule);
-      border-radius:var(--radius);
-      padding:10px;                    /* less padding */
-    }
-    .headshot{
-      width:100%;
-      aspect-ratio:1/1;
-      border-radius:8px;               /* slightly smaller radius */
-      object-fit:cover;
-      background:#ddd;
-      margin-bottom:6px;               /* less space */
-      max-height:120px;                /* cap portrait height */
-    }
-    .role{font-size:14px;color:var(--muted);margin-top:-2px}
-
-    /* ===========================
        Responsive adjustments
        =========================== */
     @media (max-width: 900px){
       .proj{grid-template-columns:220px 1fr}
-      .people-grid{grid-template-columns:repeat(2,1fr)}
     }
     @media (max-width: 720px){
       .profile{grid-template-columns:1fr}
       .proj{grid-template-columns:1fr}
-      .people-grid{grid-template-columns:1fr}
       .site-header{flex-direction:column;align-items:flex-start}
     }
   </style>
@@ -226,7 +196,7 @@
          - Replace placeholders with your own info.
     ====================================================================== -->
     <section id="about" class="profile" aria-label="About">
-      <img class="avatar" src="assets/images/person.jpg" alt="Portrait of YOUR NAME" loading="lazy">
+      <img class="avatar" src="assets/images/person.jpg" alt="Portrait of Ce Hao" loading="lazy">
       <div>
         <h1>Ce Hao (郝策)</h1>
         <p class="subtitle"> Assistant Professor · Zhongguancun Academy</p>
@@ -267,6 +237,7 @@
     ====================================================================== -->
     <section id="news" aria-label="News">
       <h2>News</h2>
+      <div class="news-scroll">
       <ul class="news-list">
         <li>
           <span class="news-date">2026-01</span>
@@ -282,7 +253,7 @@
         </li>
         <li>
           <span class="news-date">2025-10</span>
-          <span>Force-VLA was accepted to Nips 2025.</span>
+          <span>Force-VLA was accepted to NeurIPS 2025.</span>
         </li>
         <li>
           <span class="news-date">2025-07</span>
@@ -294,11 +265,12 @@
           <span>DISCO was accepted to RA-L 2025.</span>
         </li>
       </ul>
+      </div>
     </section>
 
     <hr class="rule"/>
 
-    
+
     <template id="join-disabled">
     <!-- =====================================================================
          JOIN MY GROUP
@@ -356,16 +328,15 @@
 
       <p> * Equally contributed, ✝ corresponding author.</p>
 
+      <!-- 2026 -->
       <article class="proj">
         <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/skill-moe-policy.png" alt="Teaser for SECOND PROJECT" loading="lazy">
+          <img src="assets/images/skill-moe-policy.png" alt="Teaser for SMP" loading="lazy">
         </a>
         <div class="info">
           <h3>SMP: Abstracting Robot Manipulation Skills via Mixture-of-Experts Diffusion Policies</h3>
           <p class="meta"><b>Venue/Year:</b> ICLR 2026</p>
-           <p>
-            <b>Ce Hao</b>, Xuanran Zhai, Yaohua Liu, Harold Soh
-           </p>
+          <p><b>Ce Hao</b>, Xuanran Zhai, Yaohua Liu, Harold Soh</p>
           <div class="actions">
             <a class="btn" href="https://sites.google.com/view/skillmoe-policy" target="_blank" rel="noopener">Website</a>
             <a class="btn" href="https://arxiv.org/abs/2601.21251" target="_blank" rel="noopener">Paper</a>
@@ -375,83 +346,12 @@
 
       <article class="proj">
         <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/force-vla.gif" alt="Teaser for SECOND PROJECT" loading="lazy">
-        </a>
-        <div class="info">
-          <h3>ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation</h3>
-          <p class="meta"><b>Venue/Year:</b> Nips 2025</p>
-          <!-- <ul class="authors" aria-label="Authors"> -->
-            <!-- <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Student A</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">Student B</a></li> -->
-          <!-- </ul> -->
-           <p>
-            Jiawen Yu, Hairuo Liu, Qiaojun Yu, Jieji Ren, <b>Ce Hao</b>, Haitong Ding, Guangyu Huang, Guofan Huang, Yan Song, Panpan Cai, Cewu Lu, Wenqiang Zhang
-           </p>
-          <!-- <p>One-sentence problem; one-sentence idea; one-sentence key result.</p> -->
-          <div class="actions">
-            <a class="btn" href="https://sites.google.com/view/forcevla2025/" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="https://arxiv.org/pdf/2505.22159?" target="_blank" rel="noopener">Paper</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/Hybrid-Consistency-Policy.jpg" alt="Teaser for SECOND PROJECT" loading="lazy">
-        </a>
-        <div class="info">
-          <h3>Hybrid Consistency Policy: Decoupling Multi-Modal Diversity and Real-Time Efficiency in Robotic Manipulation</h3>
-          <p class="meta"><b>Venue/Year:</b> Under review 2025</p>
-          <!-- <ul class="authors" aria-label="Authors"> -->
-            <!-- <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Student A</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">Student B</a></li> -->
-          <!-- </ul> -->
-           <p>
-            Qianyou Zhao, Yuliang Shen, Xuanran Zhai, <b>Ce Hao</b>, Duidi Wu, Jin Qi, Jie Hu, Qiaojun Yu
-           </p>
-          <!-- <p>One-sentence problem; one-sentence idea; one-sentence key result.</p> -->
-          <div class="actions">
-            <a class="btn" href="https://sites.google.com/view/hybrid-cp" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="https://arxiv.org/abs/2510.26670" target="_blank" rel="noopener">Paper</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/uerebot.gif" alt="Teaser for SECOND PROJECT" loading="lazy">
-        </a>
-        <div class="info">
-          <h3>UEREBot: Learning Safe Quadrupedal Locomotion under Unstructured Environments and High-Speed Dynamic Obstacles</h3>
-          <p class="meta"><b>Venue/Year:</b> Under review</p>
-           <p>
-            Zihao Xu, Runyu Lei, Zihao Li, Boxi Lin, <b>Ce Hao<sup>✝</sup></b>, Jin Song Dong
-           </p>
-          <div class="actions">
-            <a class="btn" href="https://uerebot-2026.github.io/" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="https://arxiv.org/pdf/2602.07363" target="_blank" rel="noopener">Paper</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/APREBot.gif" alt="Teaser for SECOND PROJECT" loading="lazy">
+          <img src="assets/images/APREBot.gif" alt="Teaser for APREBot" loading="lazy">
         </a>
         <div class="info">
           <h3>APREBot: Active Perception System for Reflexive Evasion Robot</h3>
           <p class="meta"><b>Venue/Year:</b> ICRA 2026</p>
-          <!-- <ul class="authors" aria-label="Authors">
-            <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Student A</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">Student B</a></li>
-          </ul> -->
-          <p>
-            Zihao Xu, Kuankuan Sima, Junhao Deng, Zixuan Zhuang, Chunzheng Wang, <b>Ce Hao<sup>✝</sup></b>, Jin Song Dong
-          </p>
-          <!-- <p>One-sentence problem; one-sentence idea; one-sentence key result.</p> -->
+          <p>Zihao Xu, Kuankuan Sima, Junhao Deng, Zixuan Zhuang, Chunzheng Wang, <b>Ce Hao<sup>✝</sup></b>, Jin Song Dong</p>
           <div class="actions">
             <a class="btn" href="https://sites.google.com/view/aprebot/" target="_blank" rel="noopener">Website</a>
             <a class="btn" href="https://arxiv.org/abs/2509.24733v1" target="_blank" rel="noopener">Paper</a>
@@ -461,43 +361,12 @@
 
       <article class="proj">
         <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/REBot.gif" alt="Teaser for SECOND PROJECT" loading="lazy">
+          <img src="assets/images/vfp.gif" alt="Teaser for VFP" loading="lazy">
         </a>
         <div class="info">
-          <h3>REBot: Reflexive Evasion Robot for Instantaneous Dynamic Obstacle Avoidance</h3>
-          <p class="meta"><b>Venue/Year:</b> RA-L 2025, ICRA 2026</p>
-          <!-- <ul class="authors" aria-label="Authors">
-            <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Student A</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">Student B</a></li>
-          </ul>
-          <p>One-sentence problem; one-sentence idea; one-sentence key result.</p> -->
-          <p>
-            Zihao Xu<sup>*</sup>, <b>Ce Hao<sup>*✝</sup></b>, Chunzheng Wang, Kuankuan Sima, Fan Shi, Jin Song Dong
-          </p>
-          <div class="actions">
-            <a class="btn" href="https://rebot-2025.github.io/" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="https://arxiv.org/abs/2508.06229" target="_blank" rel="noopener">Paper</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/vfp.gif" alt="Teaser for SECOND PROJECT" loading="lazy">
-        </a>
-        <div class="info">
-          <h3>Vfp: Variational flow-matching policy for multi-modal robot manipulation</h3>
+          <h3>VFP: Variational Flow-Matching Policy for Multi-Modal Robot Manipulation</h3>
           <p class="meta"><b>Venue/Year:</b> ICRA 2026</p>
-          <!-- <ul class="authors" aria-label="Authors">
-            <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Student A</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">Student B</a></li>
-          </ul>
-          <p>One-sentence problem; one-sentence idea; one-sentence key result.</p> -->
-          <p>
-            Xuanran Zhai, Qianyou Zhao, Qiaojun Yu, <b>Ce Hao<sup>✝</sup></b>
-          </p>
+          <p>Xuanran Zhai, Qianyou Zhao, Qiaojun Yu, <b>Ce Hao<sup>✝</sup></b></p>
           <div class="actions">
             <a class="btn" href="https://sites.google.com/view/varfp/" target="_blank" rel="noopener">Website</a>
             <a class="btn" href="https://arxiv.org/abs/2508.01622" target="_blank" rel="noopener">Paper</a>
@@ -507,60 +376,83 @@
 
       <article class="proj">
         <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/disco.gif" alt="Teaser for SECOND PROJECT" loading="lazy">
+          <img src="assets/images/REBot.gif" alt="Teaser for REBot" loading="lazy">
         </a>
         <div class="info">
-          <h3>Disco: Language-guided manipulation with diffusion policies and constrained inpainting</h3>
+          <h3>REBot: Reflexive Evasion Robot for Instantaneous Dynamic Obstacle Avoidance</h3>
           <p class="meta"><b>Venue/Year:</b> RA-L 2025, ICRA 2026</p>
-          <p> <b>Ce Hao</b>, Kelvin Lin, Zhiwei Xue, Siyuan Luo, Harold Soh </p>
-          <!-- <ul class="authors" aria-label="Authors">
-            <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Student A</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">Student B</a></li>
-          </ul> -->
-          <!-- <p>One-sentence problem; one-sentence idea; one-sentence key result.</p> -->
+          <p>Zihao Xu<sup>*</sup>, <b>Ce Hao<sup>*✝</sup></b>, Chunzheng Wang, Kuankuan Sima, Fan Shi, Jin Song Dong</p>
           <div class="actions">
-            <a class="btn" href="https://sites.google.com/view/disco2025/" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="https://arxiv.org/abs/2406.09767" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://rebot-2025.github.io/" target="_blank" rel="noopener">Website</a>
+            <a class="btn" href="https://arxiv.org/abs/2508.06229" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
 
       <article class="proj">
         <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/vla-touch.png" alt="Teaser for SECOND PROJECT" loading="lazy">
+          <img src="assets/images/forcevla2.png" alt="Teaser for ForceVLA2" loading="lazy">
         </a>
         <div class="info">
-          <h3>Vla-touch: Enhancing vision-language-action models with dual-level tactile feedback</h3>
-          <p class="meta"><b>Venue/Year:</b> Under review 2025</p>
-          <p>Jianxin Bi, Kevin Yuchen Ma, <b>Ce Hao</b>, Mike Zheng Shou, Harold Soh</p>
-          <!-- <ul class="authors" aria-label="Authors">
-            <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Student A</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">Student B</a></li>
-          </ul> -->
-          <!-- <p>One-sentence problem; one-sentence idea; one-sentence key result.</p> -->
+          <h3>ForceVLA2: Unleashing Hybrid Force-Position Control with Force Awareness for Contact-Rich Manipulation</h3>
+          <p class="meta"><b>Venue/Year:</b> NeurIPS 2026</p>
+          <p>Hongquan Zhang, Jinda Du, Yunsong Zhou, Jia Zeng, <b>Ce Hao</b>, Jieji Ren, Qiaojun Yu, Cewu Lu, Yu Qiao, Jiangmiao Pang</p>
           <div class="actions">
-            <a class="btn" href="https://github.com/jxbi1010/VLA-Touch" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="https://arxiv.org/pdf/2507.17294" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2026 under review -->
+      <article class="proj">
+        <a class="teaser" href="#" aria-label="Project website">
+          <img src="assets/images/skillvla.png" alt="Teaser for SkillVLA" loading="lazy">
+        </a>
+        <div class="info">
+          <h3>SkillVLA: Tackling Combinatorial Diversity in Dual-Arm Manipulation via Skill Reuse</h3>
+          <p class="meta"><b>Venue/Year:</b> Under review 2026</p>
+          <p>Xuanran Zhai, Zekai Huang, Longyan Wu, Qianyou Zhao, Qiaojun Yu, Jieji Ren, <b>Ce Hao</b>, Harold Soh</p>
+          <div class="actions">
           </div>
         </div>
       </article>
 
       <article class="proj">
         <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/chd.gif" alt="Teaser for SECOND PROJECT" loading="lazy">
+          <img src="assets/images/mode-vla.png" alt="Teaser for MoDE-VLA" loading="lazy">
+        </a>
+        <div class="info">
+          <h3>Towards Human-Like Manipulation through RL-Augmented Teleoperation and Mixture-of-Dexterous-Experts VLA</h3>
+          <p class="meta"><b>Venue/Year:</b> Under review 2026</p>
+          <p>Tutian Tang, Xingyu Ji, Wanli Xing, <b>Ce Hao</b>, Wenqiang Xu, Lin Shao, Cewu Lu, Qiaojun Yu, Jiangmiao Pang, Kaifeng Zhang</p>
+          <div class="actions">
+          </div>
+        </div>
+      </article>
+
+      <!-- 2025 published -->
+      <article class="proj">
+        <a class="teaser" href="#" aria-label="Project website">
+          <img src="assets/images/force-vla.gif" alt="Teaser for ForceVLA" loading="lazy">
+        </a>
+        <div class="info">
+          <h3>ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation</h3>
+          <p class="meta"><b>Venue/Year:</b> NeurIPS 2025</p>
+          <p>Jiawen Yu, Hairuo Liu, Qiaojun Yu, Jieji Ren, <b>Ce Hao</b>, Haitong Ding, Guangyu Huang, Guofan Huang, Yan Song, Panpan Cai, Cewu Lu, Wenqiang Zhang</p>
+          <div class="actions">
+            <a class="btn" href="https://sites.google.com/view/forcevla2025/" target="_blank" rel="noopener">Website</a>
+            <a class="btn" href="https://arxiv.org/pdf/2505.22159" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <a class="teaser" href="#" aria-label="Project website">
+          <img src="assets/images/chd.gif" alt="Teaser for CHD" loading="lazy">
         </a>
         <div class="info">
           <h3>CHD: Coupled Hierarchical Diffusion for Long-Horizon Tasks</h3>
           <p class="meta"><b>Venue/Year:</b> CoRL 2025</p>
           <p><b>Ce Hao</b>, Anxing Xiao, Zhiwei Xue, Harold Soh</p>
-          <!-- <ul class="authors" aria-label="Authors">
-            <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Student A</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">Student B</a></li>
-          </ul> -->
-          <!-- <p>One-sentence problem; one-sentence idea; one-sentence key result.</p> -->
           <div class="actions">
             <a class="btn" href="https://sites.google.com/view/chd2025/home" target="_blank" rel="noopener">Website</a>
             <a class="btn" href="https://arxiv.org/pdf/2505.07261" target="_blank" rel="noopener">Paper</a>
@@ -570,60 +462,74 @@
 
       <article class="proj">
         <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/control-acc.png" alt="Teaser for SECOND PROJECT" loading="lazy">
+          <img src="assets/images/disco.gif" alt="Teaser for DISCO" loading="lazy">
         </a>
         <div class="info">
-          <h3>Deep Reinforcement Learning Based Distributed Active Joint Localization and Target Tracking</h3>
-          <p class="meta"><b>Venue/Year:</b> ACC 2024</p>
-          <p> Dongming Wang, Shaoshu Su, Wei Ren, <b>Ce Hao</b></p>
-          <!-- <ul class="authors" aria-label="Authors">
-            <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Student A</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">Student B</a></li>
-          </ul>
-          <p>One-sentence problem; one-sentence idea; one-sentence key result.</p> -->
+          <h3>DISCO: Language-guided Manipulation with Diffusion Policies and Constrained Inpainting</h3>
+          <p class="meta"><b>Venue/Year:</b> RA-L 2025</p>
+          <p><b>Ce Hao</b>, Kelvin Lin, Zhiwei Xue, Siyuan Luo, Harold Soh</p>
           <div class="actions">
-            <!-- <a class="btn" href="https://sites.google.com/view/gamma-articulation" target="_blank" rel="noopener">Website</a> -->
-            <a class="btn" href="https://par.nsf.gov/servlets/purl/10554297" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://sites.google.com/view/disco2025/" target="_blank" rel="noopener">Website</a>
+            <a class="btn" href="https://arxiv.org/abs/2406.09767" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2025 under review -->
+      <article class="proj">
+        <a class="teaser" href="#" aria-label="Project website">
+          <img src="assets/images/Hybrid-Consistency-Policy.jpg" alt="Teaser for Hybrid Consistency Policy" loading="lazy">
+        </a>
+        <div class="info">
+          <h3>Hybrid Consistency Policy: Decoupling Multi-Modal Diversity and Real-Time Efficiency in Robotic Manipulation</h3>
+          <p class="meta"><b>Venue/Year:</b> Under review 2025</p>
+          <p>Qianyou Zhao, Yuliang Shen, Xuanran Zhai, <b>Ce Hao</b>, Duidi Wu, Jin Qi, Jie Hu, Qiaojun Yu</p>
+          <div class="actions">
+            <a class="btn" href="https://sites.google.com/view/hybrid-cp" target="_blank" rel="noopener">Website</a>
+            <a class="btn" href="https://arxiv.org/abs/2510.26670" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
 
       <article class="proj">
         <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/gamma.gif" alt="Teaser for SECOND PROJECT" loading="lazy">
+          <img src="assets/images/vla-touch.png" alt="Teaser for VLA-Touch" loading="lazy">
         </a>
         <div class="info">
-          <h3>Gamma: Generalizable articulation modeling and manipulation for articulated objects</h3>
-          <p class="meta"><b>Venue/Year:</b> ICRA 2024</p>
-          <p> Qiaojun Yu, Junbo Wang, Wenhai Liu, <b>Ce Hao</b>, Liu Liu, Lin Shao, Weiming Wang, Cewu Lu</p>
-          <!-- <ul class="authors" aria-label="Authors">
-            <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Student A</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">Student B</a></li>
-          </ul>
-          <p>One-sentence problem; one-sentence idea; one-sentence key result.</p> -->
+          <h3>VLA-Touch: Enhancing Vision-Language-Action Models with Dual-Level Tactile Feedback</h3>
+          <p class="meta"><b>Venue/Year:</b> Under review 2025</p>
+          <p>Jianxin Bi, Kevin Yuchen Ma, <b>Ce Hao</b>, Mike Zheng Shou, Harold Soh</p>
           <div class="actions">
-            <a class="btn" href="https://sites.google.com/view/gamma-articulation" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="https://arxiv.org/pdf/2309.16264" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://github.com/jxbi1010/VLA-Touch" target="_blank" rel="noopener">Website</a>
+            <a class="btn" href="https://arxiv.org/pdf/2507.17294" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
 
       <article class="proj">
         <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/skill-critic.gif" alt="Teaser for SECOND PROJECT" loading="lazy">
+          <img src="assets/images/uerebot.gif" alt="Teaser for UEREBot" loading="lazy">
         </a>
         <div class="info">
-          <h3>Skill-critic: Refining learned skills for hierarchical reinforcement learning</h3>
+          <h3>UEREBot: Learning Safe Quadrupedal Locomotion under Unstructured Environments and High-Speed Dynamic Obstacles</h3>
+          <p class="meta"><b>Venue/Year:</b> Under review</p>
+          <p>Zihao Xu, Runyu Lei, Zihao Li, Boxi Lin, <b>Ce Hao<sup>✝</sup></b>, Jin Song Dong</p>
+          <div class="actions">
+            <a class="btn" href="https://uerebot-2026.github.io/" target="_blank" rel="noopener">Website</a>
+            <a class="btn" href="https://arxiv.org/pdf/2602.07363" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2024 -->
+      <article class="proj">
+        <a class="teaser" href="#" aria-label="Project website">
+          <img src="assets/images/skill-critic.gif" alt="Teaser for Skill-Critic" loading="lazy">
+        </a>
+        <div class="info">
+          <h3>Skill-Critic: Refining Learned Skills for Hierarchical Reinforcement Learning</h3>
           <p class="meta"><b>Venue/Year:</b> RA-L 2024, IROS 2024</p>
-          <p> <b>Ce Hao</b>, Catherine Weaver, Chen Tang, Kenta Kawamoto, Masayoshi Tomizuka, Wei Zhan </p>
-          <!-- <ul class="authors" aria-label="Authors">
-            <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Student A</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">Student B</a></li>
-          </ul>
-          <p>One-sentence problem; one-sentence idea; one-sentence key result.</p> -->
+          <p><b>Ce Hao</b>, Catherine Weaver, Chen Tang, Kenta Kawamoto, Masayoshi Tomizuka, Wei Zhan</p>
           <div class="actions">
             <a class="btn" href="https://sites.google.com/view/skill-critic" target="_blank" rel="noopener">Website</a>
             <a class="btn" href="https://arxiv.org/pdf/2306.08388" target="_blank" rel="noopener">Paper</a>
@@ -633,20 +539,43 @@
 
       <article class="proj">
         <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/oneline-learning.jpg" alt="Teaser for SECOND PROJECT" loading="lazy">
+          <img src="assets/images/gamma.gif" alt="Teaser for GAMMA" loading="lazy">
         </a>
         <div class="info">
-          <h3>Improving vehicle trajectory prediction with online learning</h3>
+          <h3>GAMMA: Generalizable Articulation Modeling and Manipulation for Articulated Objects</h3>
+          <p class="meta"><b>Venue/Year:</b> ICRA 2024</p>
+          <p>Qiaojun Yu, Junbo Wang, Wenhai Liu, <b>Ce Hao</b>, Liu Liu, Lin Shao, Weiming Wang, Cewu Lu</p>
+          <div class="actions">
+            <a class="btn" href="https://sites.google.com/view/gamma-articulation" target="_blank" rel="noopener">Website</a>
+            <a class="btn" href="https://arxiv.org/pdf/2309.16264" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <a class="teaser" href="#" aria-label="Project website">
+          <img src="assets/images/control-acc.png" alt="Teaser for ACC 2024" loading="lazy">
+        </a>
+        <div class="info">
+          <h3>Deep Reinforcement Learning Based Distributed Active Joint Localization and Target Tracking</h3>
+          <p class="meta"><b>Venue/Year:</b> ACC 2024</p>
+          <p>Dongming Wang, Shaoshu Su, Wei Ren, <b>Ce Hao</b></p>
+          <div class="actions">
+            <a class="btn" href="https://ieeexplore.ieee.org/abstract/document/10186557" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2023 -->
+      <article class="proj">
+        <a class="teaser" href="#" aria-label="Project website">
+          <img src="assets/images/oneline-learning.jpg" alt="Teaser for Online Learning IV 2023" loading="lazy">
+        </a>
+        <div class="info">
+          <h3>Improving Vehicle Trajectory Prediction with Online Learning</h3>
           <p class="meta"><b>Venue/Year:</b> IEEE Intelligent Vehicles Symposium (IV) 2023</p>
           <p><b>Ce Hao</b>, Yuying Chen, Siyuan Cheng, Hongbo Zhang</p>
-          <!-- <ul class="authors" aria-label="Authors">
-            <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Student A</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">Student B</a></li>
-          </ul> -->
-          <!-- <p>One-sentence problem; one-sentence idea; one-sentence key result.</p> -->
           <div class="actions">
-            <!-- <a class="btn" href="#" target="_blank" rel="noopener">Website</a> -->
             <a class="btn" href="https://ieeexplore.ieee.org/abstract/document/10186557" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
@@ -654,20 +583,13 @@
 
       <article class="proj">
         <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/GPR-racing.jpg" alt="Teaser for SECOND PROJECT" loading="lazy">
+          <img src="assets/images/GPR-racing.jpg" alt="Teaser for GPR Racing IFAC 2023" loading="lazy">
         </a>
         <div class="info">
-          <h3>Double-iterative gaussian process regression for modeling error compensation in autonomous racing</h3>
+          <h3>Double-Iterative Gaussian Process Regression for Modeling Error Compensation in Autonomous Racing</h3>
           <p class="meta"><b>Venue/Year:</b> IFAC 2023</p>
           <p>Shaoshu Su, <b>Ce Hao</b>, Catherine Weaver, Chen Tang, Wei Zhan, Masayoshi Tomizuka</p>
-          <!-- <ul class="authors" aria-label="Authors">
-            <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Student A</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">Student B</a></li>
-          </ul>
-          <p>One-sentence problem; one-sentence idea; one-sentence key result.</p> -->
           <div class="actions">
-            <!-- <a class="btn" href="#" target="_blank" rel="noopener">Website</a> -->
             <a class="btn" href="https://arxiv.org/pdf/2305.07740" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
@@ -675,104 +597,32 @@
 
       <article class="proj">
         <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/GTS.gif" alt="Teaser for SECOND PROJECT" loading="lazy">
+          <img src="assets/images/GTS.gif" alt="Teaser for GTS Racing" loading="lazy">
         </a>
         <div class="info">
-          <h3>Outracing human racers with model-based planning and control for time-trial racing</h3>
+          <h3>Outracing Human Racers with Model-based Planning and Control for Time-Trial Racing</h3>
           <p class="meta"><b>Venue/Year:</b> Sony AI project 2023</p>
-          <p> <b>Ce Hao</b>, Chen Tang, Eric Bergkvist, Catherine Weaver, Liting Sun, Wei Zhan, Masayoshi Tomizuka </p>
-          <!-- <ul class="authors" aria-label="Authors">
-            <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Student A</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">Student B</a></li>
-          </ul>
-          <p>One-sentence problem; one-sentence idea; one-sentence key result.</p> -->
+          <p><b>Ce Hao</b>, Chen Tang, Eric Bergkvist, Catherine Weaver, Liting Sun, Wei Zhan, Masayoshi Tomizuka</p>
           <div class="actions">
-            <!-- <a class="btn" href="#" target="_blank" rel="noopener">Website</a> -->
             <a class="btn" href="https://arxiv.org/pdf/2211.09378" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
 
+      <!-- 2020 -->
       <article class="proj">
         <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/potential field.jpg" alt="APF" loading="lazy">
+          <img src="assets/images/potential-field.jpg" alt="APF" loading="lazy">
         </a>
         <div class="info">
-          <h3>Path planning for unmanned surface vehicle based on predictive artificial potential field</h3>
+          <h3>Path Planning for Unmanned Surface Vehicle Based on Predictive Artificial Potential Field</h3>
           <p class="meta"><b>Venue/Year:</b> International Journal of Advanced Robotic Systems 2020</p>
-          <p><b>Ce Hao</b>, Jiangcheng Su,  Jia Song</p>
-          <!-- <ul class="authors" aria-label="Authors">
-            <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Student A</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">Student B</a></li>
-          </ul>
-          <p>One-sentence problem; one-sentence idea; one-sentence key result.</p> -->
+          <p><b>Ce Hao</b>, Jiangcheng Su, Jia Song</p>
           <div class="actions">
-            <!-- <a class="btn" href="#" target="_blank" rel="noopener">Website</a> -->
             <a class="btn" href="https://journals.sagepub.com/doi/full/10.1177/1729881420918461" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
-
-      <template id="proj-1-disabled">
-      <!-- ================== PROJECT #1 ================== -->
-      <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
-          <!-- Use <img> OR a muted looping <video>. Keep one. -->
-          <img src="assets/images/project-1.jpg" alt="Teaser for PROJECT TITLE" loading="lazy">
-          <!--
-          <video autoplay loop muted playsinline preload="metadata" poster="assets/images/project-1.jpg">
-            <source src="assets/videos/project-1.mp4" type="video/mp4">
-          </video>
-          -->
-        </a>
-        <div class="info">
-          <h3>PROJECT TITLE: A Concise, Specific Name</h3>
-          <p class="meta"><b>Venue/Year:</b> Conference/Journal 2025</p>
-          <!-- Authors as clickable links -->
-          <ul class="authors" aria-label="Authors">
-            <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://coauthor-a.example" target="_blank" rel="noopener">Coauthor A</a></li>
-            <li><a href="https://coauthor-b.example" target="_blank" rel="noopener">Coauthor B</a></li>
-          </ul>
-          <p>
-            We address PROBLEM with METHOD that leverages KEY INSIGHT.
-            Experiments show OUTCOME on DATASET / tasks.
-          </p>
-          <div class="actions">
-            <a class="btn" href="#" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">Paper (arXiv)</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">Code</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">Video</a>
-          </div>
-        </div>
-      </article>
-      
-
-      <!-- ================== PROJECT #2 ================== -->
-      <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/project-2.jpg" alt="Teaser for SECOND PROJECT" loading="lazy">
-        </a>
-        <div class="info">
-          <h3>SECOND PROJECT TITLE</h3>
-          <p class="meta"><b>Venue/Year:</b> Journal/Conference 2024</p>
-          <ul class="authors" aria-label="Authors">
-            <li><a href="https://your-site.example" target="_blank" rel="noopener">Your Name</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Student A</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">Student B</a></li>
-          </ul>
-          <p>One-sentence problem; one-sentence idea; one-sentence key result.</p>
-          <div class="actions">
-            <a class="btn" href="#" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">Paper</a>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    </template>
 
     <hr class="rule"/>
 
@@ -781,73 +631,6 @@
          PEOPLE
          - Split into Current Students and Alumni sections.
     ====================================================================== -->
-    <template id="people-disabled">
-    <section id="people" aria-label="People">
-      <h2>People</h2>
-      <p class="section-desc">Our team and collaborators.</p>
-
-      <!-- ---- Current Students ---- -->
-      <h3>Current Students</h3>
-      <div class="people-grid">
-        <div class="person">
-          <img class="headshot" src="assets/images/people/pi.jpg" alt="PI headshot" loading="lazy">
-          <h4>YOUR NAME</h4>
-          <p class="role">PI</p>
-          <p>Short bio line. Interests: X, Y, Z.</p>
-          <p>
-            <a href="mailto:you@example.com">Email</a> ·
-            <a href="https://scholar.google.com/">Scholar</a> ·
-            <a href="https://github.com/">GitHub</a>
-          </p>
-        </div>
-
-        <div class="person">
-          <img class="headshot" src="assets/images/people/student-a.jpg" alt="Student A headshot" loading="lazy">
-          <h4>Student A</h4>
-          <p class="role">PhD Student</p>
-          <p>Topic: Manipulation + Diffusion.</p>
-          <p><a href="#">Homepage</a></p>
-        </div>
-
-        <div class="person">
-          <img class="headshot" src="assets/images/people/student-b.jpg" alt="Student B headshot" loading="lazy">
-          <h4>Student B</h4>
-          <p class="role">Master Student</p>
-          <p>Topic: Perception + SLAM.</p>
-          <p><a href="#">Homepage</a></p>
-        </div>
-      </div>
-
-      <br/>
-
-      <!-- ---- Alumni ---- -->
-      <h3>Alumni</h3>
-      <div class="people-grid">
-        <div class="person">
-          <img class="headshot" src="assets/images/people/alumni-a.jpg" alt="Alumni A headshot" loading="lazy">
-          <h4>Alumni A</h4>
-          <p class="role">Now at: Company/PhD Program</p>
-          <p><a href="#">Homepage</a></p>
-        </div>
-
-        <div class="person">
-          <img class="headshot" src="assets/images/people/alumni-b.jpg" alt="Alumni B headshot" loading="lazy">
-          <h4>Alumni B</h4>
-          <p class="role">Now at: Company/PhD Program</p>
-          <p><a href="#">Homepage</a></p>
-        </div>
-
-        <div class="person">
-          <img class="headshot" src="assets/images/people/alumni-c.jpg" alt="Alumni C headshot" loading="lazy">
-          <h4>Alumni C</h4>
-          <p class="role">Now at: Company/PhD Program</p>
-          <p><a href="#">Homepage</a></p>
-        </div>
-      </div>
-    </section>
-
-    <hr class="rule"/>
-    </template>
 
     <!-- =====================================================================
          FOOTER
