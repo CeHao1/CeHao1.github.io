@@ -54,6 +54,12 @@
     .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
     .tag{background:var(--card);padding:4px 10px;border-radius:999px;font-size:14px;color:#333}
 
+    /* social icon buttons */
+    .social-links{display:flex;gap:12px;margin-top:10px}
+    .social-links a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--card);border:1px solid var(--rule);transition:background .2s,transform .2s}
+    .social-links a:hover{background:var(--rule);transform:scale(1.1);text-decoration:none}
+    .social-links a img{width:20px;height:20px}
+
     /* ===========================
        NEWS (simple list)
        =========================== */
@@ -194,7 +200,7 @@
         <a href="#contact">Contact</a>
         <a href="#research">Research</a>
         <!-- <a href="#people">People</a> -->
-        <!-- <a href="#join">Join</a> -->
+        <a href="#join">Join</a>
       </nav>
     </header>
 
@@ -235,6 +241,17 @@
           <span class="tag">Robotics</span>
           <span class="tag">Robot Learning</span>
           <span class="tag">Locomotion</span>
+        </div>
+        <div class="social-links">
+          <a href="https://scholar.google.com/citations?user=Yk3s7HUAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar">
+            <img src="https://cdn.simpleicons.org/googlescholar" alt="Google Scholar">
+          </a>
+          <a href="https://space.bilibili.com/3690979477424648?spm_id_from=333.337.0.0" target="_blank" rel="noopener" title="Bilibili">
+            <img src="https://cdn.simpleicons.org/bilibili" alt="Bilibili">
+          </a>
+          <a href="https://www.xiaohongshu.com/user/profile/692a8d4b000000003201e833" target="_blank" rel="noopener" title="Xiaohongshu">
+            <img src="https://cdn.simpleicons.org/xiaohongshu" alt="Xiaohongshu">
+          </a>
         </div>
       </div>
     </section>
@@ -285,7 +302,7 @@
     <hr class="rule"/>
 
 
-    <template id="join-disabled">
+    <template id="join-template-disabled">
     <!-- =====================================================================
          JOIN MY GROUP
          - Summarize topics, expectations, and how to apply.
@@ -325,8 +342,7 @@
       <h2>Contact</h2>
       <!-- <p>Email: <a href="cehao@u.nus.edu">cehao "at" u "dot" nus "dot" edu</a></p> -->
        <!-- <p>Email: cehao@u.nus.edu</p> -->
-      <p>Email: <a href="mailto:cehao@u.nus.edu">cehao@u.nus.edu</a></p>
-      <p>Email: <a href="mailto:haoce@bza.edu.cn">haoce@bza.edu.cn</a></p>
+      <p>Email: <a href="mailto:cehao@u.nus.edu">cehao@u.nus.edu</a> | <a href="mailto:haoce@bza.edu.cn">haoce@bza.edu.cn</a></p>
       <p>Office: Building C9, Zhongguancun Academy, Beijing, China</p>
     </section>
 
@@ -644,6 +660,32 @@
       </article>
 
       </div><!-- /proj-scroll -->
+    </section>
+
+    <hr class="rule"/>
+
+    <section id="join" aria-label="Join my group">
+      <h2>Join My Group</h2>
+      <p>
+        Our group at Zhongguancun Academy works on robot learning, robotic manipulation, and legged/humanoid robot systems.
+        We welcome applications from highly motivated students and collaborators who are interested in these areas.
+      </p>
+      <h3>Prospective Students and Visitors</h3>
+      <ul>
+        <li>Joint PhD training students at Zhongguancun Academy</li>
+        <li>Direct PhD-track undergraduate students at Zhongguancun Academy</li>
+        <li>Visiting students, including undergraduate, master's, PhD, and industry joint-training students</li>
+      </ul>
+      <p>
+        Students with strong interests in robotics, machine learning, control, and embodied intelligence are especially encouraged to apply.
+      </p>
+      <h3>How to Apply</h3>
+      <p>
+        Please email your CV and a brief personal letter to
+        <a href="mailto:robotlearning.zgca@outlook.com">robotlearning.zgca@outlook.com</a>.
+        In your email, please indicate the position you would like to apply for, and briefly describe your research experience and interests.
+      </p>
+    </section>
 
     <hr class="rule"/>
 
@@ -657,7 +699,7 @@
          FOOTER
     ====================================================================== -->
     <footer aria-label="Site footer">
-      <small>© <span id="year"></span> YOUR NAME. All rights reserved.</small>
+      <small>© <span id="year"></span> Ce Hao. All rights reserved.</small>
     </footer>
   </div>
 
@@ -669,11 +711,11 @@
     const projScroll = document.getElementById('proj-scroll');
     if (projScroll) {
       const sampleItems = document.querySelectorAll('#proj-scroll > .proj');
-      if (sampleItems.length >= 3) {
-        const avgH = Array.from(sampleItems).slice(0, 3).reduce((s, el) => {
+      if (sampleItems.length >= 5) {
+        const avgH = Array.from(sampleItems).slice(0, 5).reduce((s, el) => {
           return s + el.getBoundingClientRect().height + 14;
-        }, 0) / 3;
-        projScroll.style.maxHeight = Math.round(avgH * 3) + 'px';
+        }, 0) / 5;
+        projScroll.style.maxHeight = Math.round(avgH * 5) + 'px';
       } else {
         projScroll.style.maxHeight = '560px';
       }
