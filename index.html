@@ -94,6 +94,18 @@
       margin-top: 14px;
     }
 
+    /* Keep newly added paper teasers visually aligned */
+    .proj.new-paper .teaser {
+      background: #fff;
+    }
+
+    .proj.new-paper .teaser img {
+      height: 170px;
+      max-height: 170px;
+      object-fit: contain;
+      background: #fff;
+    }
+
     /* teaser block (image or video) */
     .teaser {
       width: 100%;
@@ -181,6 +193,7 @@
     @media (max-width: 720px){
       .profile{grid-template-columns:1fr}
       .proj{grid-template-columns:1fr}
+      .proj.new-paper .teaser img{height:auto;max-height:260px}
       .site-header{flex-direction:column;align-items:flex-start}
     }
   </style>
@@ -267,12 +280,20 @@
       <div class="news-scroll">
       <ul class="news-list">
         <li>
+          <span class="news-date">2026-08</span>
+          <span>TouchThinker and PhotoCraft were accepted to EMNLP 2026.</span>
+        </li>
+        <li>
+          <span class="news-date">2026-07</span>
+          <span>MoDE-VLA, TacReasoner, and ResTacVLA were accepted to IROS 2026.</span>
+        </li>
+        <li>
           <span class="news-date">2026-04</span>
           <span>Hybrid Consistency Policy and VLA-Touch were accepted to RA-L 2026.</span>
         </li>
         <li>
           <span class="news-date">2026-04</span>
-          <span>SkillVLA was accepted to R:SS 2026.</span>
+          <span>SkillVLA and Guided SSIP were accepted to R:SS 2026.</span>
         </li>
         <li>
           <span class="news-date">2026-03</span>
@@ -292,7 +313,7 @@
         </li>
         <li>
           <span class="news-date">2025-10</span>
-          <span>Force-VLA was accepted to NeurIPS 2025.</span>
+          <span>ForceVLA was accepted to NeurIPS 2025.</span>
         </li>
         <li>
           <span class="news-date">2025-07</span>
@@ -368,14 +389,87 @@
 
       <div class="proj-scroll" id="proj-scroll">
       <!-- 2026 accepted -->
+      <article class="proj new-paper">
+        <a class="teaser" href="https://sites.google.com/view/mode-vla" target="_blank" rel="noopener" aria-label="MoDE-VLA project website">
+          <img src="assets/images/mode-vla-iros2026.png" alt="IMCopilot teleoperation and MoDE-VLA apple-peeling task" loading="lazy">
+        </a>
+        <div class="info">
+          <h3>Towards Human-Like Manipulation through RL-Augmented Teleoperation and Mixture-of-Dexterous-Experts VLA</h3>
+          <p class="meta"><b>Venue/Year:</b> IROS 2026</p>
+          <p>Tutian Tang, Xingyu Ji, Wanli Xing, <b>Ce Hao</b>, Wenqiang Xu, Lin Shao, Cewu Lu, Qiaojun Yu, Jiangmiao Pang, Kaifeng Zhang</p>
+          <div class="actions">
+            <a class="btn" href="https://sites.google.com/view/mode-vla" target="_blank" rel="noopener">Website</a>
+            <a class="btn" href="https://arxiv.org/abs/2603.08122" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj new-paper">
+        <a class="teaser" href="https://arxiv.org/abs/2607.05131" target="_blank" rel="noopener" aria-label="TacReasoner paper">
+          <img src="assets/images/tacreasoner.png" alt="Overview of the TacReasoner data and reasoning pipeline" loading="lazy">
+        </a>
+        <div class="info">
+          <h3>TacReasoner: A Dynamic Tactile-Language Framework for Interactive Reasoning in Real-World Scenarios</h3>
+          <p class="meta"><b>Venue/Year:</b> IROS 2026</p>
+          <p>Kailin Lyu, Di Wu, Long Xiao, Jianning Zeng, Jianwei He, Chang Lin, Lianyu Hu, Lin Shu, Jie Hao, <b>Ce Hao<sup>✝</sup></b></p>
+          <div class="actions">
+            <a class="btn" href="https://arxiv.org/abs/2607.05131" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj new-paper">
+        <a class="teaser" href="https://awilekong.github.io/ResTacVLA/" target="_blank" rel="noopener" aria-label="ResTacVLA project website">
+          <img src="assets/images/restacvla.png" alt="Overview of the residual tactile representation in ResTacVLA" loading="lazy">
+        </a>
+        <div class="info">
+          <h3>Feeling the Unexpected: ResTacVLA for Contact-Rich Manipulation via Residual Tactile Representation</h3>
+          <p class="meta"><b>Venue/Year:</b> IROS 2026</p>
+          <p>Pengwei Zhang, Bin Xie, Xinpan Meng, Xinyu Guo, <b>Ce Hao</b>, Fang Deng, Long Cheng, Tiancai Wang</p>
+          <div class="actions">
+            <a class="btn" href="https://awilekong.github.io/ResTacVLA/" target="_blank" rel="noopener">Website</a>
+            <a class="btn" href="https://arxiv.org/abs/2607.03387" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj new-paper">
+        <a class="teaser" href="https://github.com/lvkailin0118/TouchThinker" target="_blank" rel="noopener" aria-label="TouchThinker code repository">
+          <img src="assets/images/touchthinker.png" alt="Overview of the TouchThinker-1M dataset" loading="lazy">
+        </a>
+        <div class="info">
+          <h3>TouchThinker: Scaling Tactile Commonsense Reasoning to the Open World with Large-scale Data and Action-aware Representation</h3>
+          <p class="meta"><b>Venue/Year:</b> EMNLP 2026</p>
+          <p>Kailin Lyu, Di Wu, Pengwei Zhang, Yuhang Zheng, Yingxin Lai, Long Xiao, Kangyi Wu, Pengna Li, Chen Gao, Lianyu Hu, Xiaobin Hu, Jie Hao, <b>Ce Hao<sup>✝</sup></b>, Weihao Yuan, Shuicheng Yan</p>
+          <div class="actions">
+            <a class="btn" href="https://arxiv.org/abs/2606.11637" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://github.com/lvkailin0118/TouchThinker" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj new-paper">
+        <a class="teaser" href="https://arxiv.org/abs/2606.03099" target="_blank" rel="noopener" aria-label="PhotoCraft paper">
+          <img src="assets/images/photocraft.png" alt="Overview of the hierarchical self-evolving memory system in PhotoCraft" loading="lazy">
+        </a>
+        <div class="info">
+          <h3>PhotoCraft: Agentic Reasoning with Hierarchical Self-Evolving Memory for Deep Image Search</h3>
+          <p class="meta"><b>Venue/Year:</b> EMNLP 2026</p>
+          <p>Kailin Lyu, Zhiqiang Yuan, Jianwei He, Qiwei Yan, Xuanbo Su, Nanxing Hu, Yang Liu, <b>Ce Hao</b>, Shengqian Qin, Lianyu Hu, Jinchao Zhang, Jie Zhou</p>
+          <div class="actions">
+            <a class="btn" href="https://arxiv.org/abs/2606.03099" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </article>
+
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://sites.google.com/view/skillmoe-policy" target="_blank" rel="noopener" aria-label="SMP project website">
           <img src="assets/images/skill-moe-policy.png" alt="Teaser for SMP" loading="lazy">
         </a>
         <div class="info">
-          <h3>SMP: Abstracting Robot Manipulation Skills via Mixture-of-Experts Diffusion Policies</h3>
+          <h3>Abstracting Robot Manipulation Skills via Mixture-of-Experts Diffusion Policies</h3>
           <p class="meta"><b>Venue/Year:</b> ICLR 2026</p>
-          <p><b>Ce Hao</b>, Xuanran Zhai, Yaohua Liu, Harold Soh</p>
+          <p><b>Ce Hao<sup>*✝</sup></b>, Xuanran Zhai<sup>*</sup>, Yaohua Liu, Harold Soh</p>
           <div class="actions">
             <a class="btn" href="https://sites.google.com/view/skillmoe-policy" target="_blank" rel="noopener">Website</a>
             <a class="btn" href="https://arxiv.org/abs/2601.21251" target="_blank" rel="noopener">Paper</a>
@@ -384,13 +478,13 @@
       </article>
 
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://sites.google.com/view/force-vla2/home" target="_blank" rel="noopener" aria-label="ForceVLA2 project website">
           <img src="assets/images/forcevla2.png" alt="Teaser for ForceVLA2" loading="lazy">
         </a>
         <div class="info">
           <h3>ForceVLA2: Unleashing Hybrid Force-Position Control with Force Awareness for Contact-Rich Manipulation</h3>
           <p class="meta"><b>Venue/Year:</b> CVPR 2026</p>
-          <p>Hongquan Zhang, Jinda Du, Yunsong Zhou, Jia Zeng, <b>Ce Hao</b>, Jieji Ren, Qiaojun Yu, Cewu Lu, Yu Qiao, Jiangmiao Pang</p>
+          <p>Yang Li, Zhaxizhuoma, Hongru Jiang, Junjie Xia, Hongquan Zhang, Jinda Du, Yunsong Zhou, Jia Zeng, <b>Ce Hao</b>, Jieji Ren, Qiaojun Yu, Cewu Lu, Yu Qiao, Jiangmiao Pang</p>
           <div class="actions">
             <a class="btn" href="https://sites.google.com/view/force-vla2/home" target="_blank" rel="noopener">Website</a>
             <a class="btn" href="https://arxiv.org/abs/2603.15169" target="_blank" rel="noopener">Paper</a>
@@ -398,8 +492,24 @@
         </div>
       </article>
 
+      <article class="proj new-paper">
+        <a class="teaser" href="https://clear-nus.github.io/blog/guided-ssip" target="_blank" rel="noopener" aria-label="Guided SSIP project website">
+          <img src="assets/images/guided-ssip.png" alt="Overview of Guided SSIP and its safety-reward trade-off" loading="lazy">
+        </a>
+        <div class="info">
+          <h3>Guided Streaming Stochastic Interpolant Policy</h3>
+          <p class="meta"><b>Venue/Year:</b> R:SS 2026</p>
+          <p>Puming Jiang<sup>*</sup>, Meiyi Wang<sup>*</sup>, Kelvin Lin, <b>Ce Hao</b>, Harold Soh</p>
+          <div class="actions">
+            <a class="btn" href="https://clear-nus.github.io/blog/guided-ssip" target="_blank" rel="noopener">Website</a>
+            <a class="btn" href="https://arxiv.org/abs/2605.10051" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://github.com/0scarJ1ang/guided-streaming-policy" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+      </article>
+
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://arxiv.org/abs/2603.03836" target="_blank" rel="noopener" aria-label="SkillVLA paper">
           <img src="assets/images/skillvla.png" alt="Teaser for SkillVLA" loading="lazy">
         </a>
         <div class="info">
@@ -413,22 +523,22 @@
       </article>
 
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://aprebot-2026.github.io/" target="_blank" rel="noopener" aria-label="APREBot project website">
           <img src="assets/images/APREBot.gif" alt="Teaser for APREBot" loading="lazy">
         </a>
         <div class="info">
           <h3>APREBot: Active Perception System for Reflexive Evasion Robot</h3>
           <p class="meta"><b>Venue/Year:</b> ICRA 2026</p>
-          <p>Zihao Xu, Kuankuan Sima, Junhao Deng, Zixuan Zhuang, Chunzheng Wang, <b>Ce Hao<sup>✝</sup></b>, Jin Song Dong</p>
+          <p>Zihao Xu, Kuankuan Sima, Junhao Deng, Zixuan Zhuang, Chunzheng Wang, <b>Ce Hao</b>, Jin Song Dong</p>
           <div class="actions">
-            <a class="btn" href="https://sites.google.com/view/aprebot/" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="https://arxiv.org/abs/2509.24733v1" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://aprebot-2026.github.io/" target="_blank" rel="noopener">Website</a>
+            <a class="btn" href="https://arxiv.org/abs/2509.24733" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
 
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://sites.google.com/view/varfp/" target="_blank" rel="noopener" aria-label="VFP project website">
           <img src="assets/images/vfp.gif" alt="Teaser for VFP" loading="lazy">
         </a>
         <div class="info">
@@ -443,7 +553,7 @@
       </article>
 
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://rebot-2025.github.io/" target="_blank" rel="noopener" aria-label="REBot project website">
           <img src="assets/images/REBot.gif" alt="Teaser for REBot" loading="lazy">
         </a>
         <div class="info">
@@ -458,7 +568,7 @@
       </article>
 
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://sites.google.com/view/hybrid-cp" target="_blank" rel="noopener" aria-label="Hybrid Consistency Policy project website">
           <img src="assets/images/Hybrid-Consistency-Policy.jpg" alt="Teaser for Hybrid Consistency Policy" loading="lazy">
         </a>
         <div class="info">
@@ -473,7 +583,7 @@
       </article>
 
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://jxbi1010.github.io/vla-touch-gh-pages/" target="_blank" rel="noopener" aria-label="VLA-Touch project website">
           <img src="assets/images/vla-touch.png" alt="Teaser for VLA-Touch" loading="lazy">
         </a>
         <div class="info">
@@ -481,44 +591,31 @@
           <p class="meta"><b>Venue/Year:</b> RA-L 2026</p>
           <p>Jianxin Bi, Kevin Yuchen Ma, <b>Ce Hao</b>, Mike Zheng Shou, Harold Soh</p>
           <div class="actions">
-            <a class="btn" href="https://github.com/jxbi1010/VLA-Touch" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="https://arxiv.org/pdf/2507.17294" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://jxbi1010.github.io/vla-touch-gh-pages/" target="_blank" rel="noopener">Website</a>
+            <a class="btn" href="https://arxiv.org/abs/2507.17294" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://github.com/jxbi1010/VLA-Touch" target="_blank" rel="noopener">Code</a>
           </div>
         </div>
       </article>
 
       <!-- 2026 under review -->
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
-          <img src="assets/images/mode-vla.png" alt="Teaser for MoDE-VLA" loading="lazy">
-        </a>
-        <div class="info">
-          <h3>Towards Human-Like Manipulation through RL-Augmented Teleoperation and Mixture-of-Dexterous-Experts VLA</h3>
-          <p class="meta"><b>Venue/Year:</b> Under review 2026</p>
-          <p>Tutian Tang, Xingyu Ji, Wanli Xing, <b>Ce Hao</b>, Wenqiang Xu, Lin Shao, Cewu Lu, Qiaojun Yu, Jiangmiao Pang, Kaifeng Zhang</p>
-          <div class="actions">
-            <a class="btn" href="https://arxiv.org/abs/2603.08122" target="_blank" rel="noopener">Paper</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://mrsecant.github.io/OmniVTA/" target="_blank" rel="noopener" aria-label="OmniVTA project website">
           <img src="assets/images/OmniVTA.png" alt="Teaser for OmniVTA" loading="lazy">
         </a>
         <div class="info">
           <h3>OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation</h3>
           <p class="meta"><b>Venue/Year:</b> Under review 2026</p>
-          <p>Yuhang Zheng, Songen Gu, Weize Li, Yupeng Zheng, Yujie Zang, Shuai Tian, Xiang Li, <b>Ce Hao</b>, Chen Gao, Si Liu, Haoran Li, Yilun Chen, Shuicheng Yan, Wenchao Ding</p>
+          <p>Yuhang Zheng, Songen Gu, Yupeng Zheng, Weize Li, Yujie Zang, Shuai Tian, Xiang Li, <b>Ce Hao</b>, Chen Gao, Si Liu, Haoran Li, Yilun Chen, Shuicheng Yan, Wenchao Ding</p>
           <div class="actions">
             <a class="btn" href="https://mrsecant.github.io/OmniVTA/" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="https://arxiv.org/pdf/2603.19201" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://arxiv.org/abs/2603.19201" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
 
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://uerebot-2026.github.io/" target="_blank" rel="noopener" aria-label="UEREBot project website">
           <img src="assets/images/uerebot.gif" alt="Teaser for UEREBot" loading="lazy">
         </a>
         <div class="info">
@@ -527,50 +624,51 @@
           <p>Zihao Xu, Runyu Lei, Zihao Li, Boxi Lin, <b>Ce Hao<sup>✝</sup></b>, Jin Song Dong</p>
           <div class="actions">
             <a class="btn" href="https://uerebot-2026.github.io/" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="https://arxiv.org/pdf/2602.07363" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://arxiv.org/abs/2602.07363" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
 
       <!-- 2025 accepted -->
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://sites.google.com/view/forcevla2025/" target="_blank" rel="noopener" aria-label="ForceVLA project website">
           <img src="assets/images/force-vla.gif" alt="Teaser for ForceVLA" loading="lazy">
         </a>
         <div class="info">
           <h3>ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation</h3>
           <p class="meta"><b>Venue/Year:</b> NeurIPS 2025</p>
-          <p>Jiawen Yu, Hairuo Liu, Qiaojun Yu, Jieji Ren, <b>Ce Hao</b>, Haitong Ding, Guangyu Huang, Guofan Huang, Yan Song, Panpan Cai, Cewu Lu, Wenqiang Zhang</p>
+          <p>Jiawen Yu, Hairuo Liu, Qiaojun Yu, Jieji Ren, <b>Ce Hao</b>, Haitong Ding, Guangyu Huang, Guofan Huang, Yan Song, Panpan Cai, Wenqiang Zhang, Cewu Lu</p>
           <div class="actions">
             <a class="btn" href="https://sites.google.com/view/forcevla2025/" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="https://arxiv.org/pdf/2505.22159" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://arxiv.org/abs/2505.22159" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://github.com/ft-robotic/ForceVLA" target="_blank" rel="noopener">Code</a>
           </div>
         </div>
       </article>
 
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://sites.google.com/view/chd2025/home" target="_blank" rel="noopener" aria-label="CHD project website">
           <img src="assets/images/chd.gif" alt="Teaser for CHD" loading="lazy">
         </a>
         <div class="info">
           <h3>CHD: Coupled Hierarchical Diffusion for Long-Horizon Tasks</h3>
           <p class="meta"><b>Venue/Year:</b> CoRL 2025</p>
-          <p><b>Ce Hao</b>, Anxing Xiao, Zhiwei Xue, Harold Soh</p>
+          <p><b>Ce Hao<sup>✝</sup></b>, Anxing Xiao, Zhiwei Xue, Harold Soh</p>
           <div class="actions">
             <a class="btn" href="https://sites.google.com/view/chd2025/home" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="https://arxiv.org/pdf/2505.07261" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://arxiv.org/abs/2505.07261" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
 
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://sites.google.com/view/disco2025/" target="_blank" rel="noopener" aria-label="DISCO project website">
           <img src="assets/images/disco.gif" alt="Teaser for DISCO" loading="lazy">
         </a>
         <div class="info">
-          <h3>DISCO: Language-guided Manipulation with Diffusion Policies and Constrained Inpainting</h3>
+          <h3>DISCO: Language-Guided Manipulation with Diffusion Policies and Constrained Inpainting</h3>
           <p class="meta"><b>Venue/Year:</b> RA-L 2025</p>
-          <p><b>Ce Hao</b>, Kelvin Lin, Zhiwei Xue, Siyuan Luo, Harold Soh</p>
+          <p><b>Ce Hao<sup>✝</sup></b>, Kelvin Lin, Zhiwei Xue, Siyuan Luo, Harold Soh</p>
           <div class="actions">
             <a class="btn" href="https://sites.google.com/view/disco2025/" target="_blank" rel="noopener">Website</a>
             <a class="btn" href="https://arxiv.org/abs/2406.09767" target="_blank" rel="noopener">Paper</a>
@@ -580,22 +678,23 @@
 
       <!-- 2024 accepted -->
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://sites.google.com/view/skill-critic" target="_blank" rel="noopener" aria-label="Skill-Critic project website">
           <img src="assets/images/skill-critic.gif" alt="Teaser for Skill-Critic" loading="lazy">
         </a>
         <div class="info">
           <h3>Skill-Critic: Refining Learned Skills for Hierarchical Reinforcement Learning</h3>
           <p class="meta"><b>Venue/Year:</b> RA-L 2024, IROS 2024</p>
-          <p><b>Ce Hao</b>, Catherine Weaver, Chen Tang, Kenta Kawamoto, Masayoshi Tomizuka, Wei Zhan</p>
+          <p><b>Ce Hao<sup>✝</sup></b>, Catherine Weaver, Chen Tang, Kenta Kawamoto, Masayoshi Tomizuka, Wei Zhan</p>
           <div class="actions">
             <a class="btn" href="https://sites.google.com/view/skill-critic" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="https://arxiv.org/pdf/2306.08388" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://arxiv.org/abs/2306.08388" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://github.com/CeHao1/skill-critic" target="_blank" rel="noopener">Code</a>
           </div>
         </div>
       </article>
 
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://sites.google.com/view/gamma-articulation" target="_blank" rel="noopener" aria-label="GAMMA project website">
           <img src="assets/images/gamma.gif" alt="Teaser for GAMMA" loading="lazy">
         </a>
         <div class="info">
@@ -604,13 +703,14 @@
           <p>Qiaojun Yu, Junbo Wang, Wenhai Liu, <b>Ce Hao</b>, Liu Liu, Lin Shao, Weiming Wang, Cewu Lu</p>
           <div class="actions">
             <a class="btn" href="https://sites.google.com/view/gamma-articulation" target="_blank" rel="noopener">Website</a>
-            <a class="btn" href="https://arxiv.org/pdf/2309.16264" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://arxiv.org/abs/2309.16264" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://github.com/qiaojunyu/GAMMA-ICRA2024" target="_blank" rel="noopener">Code</a>
           </div>
         </div>
       </article>
 
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://ieeexplore.ieee.org/document/10644155" target="_blank" rel="noopener" aria-label="ACC 2024 paper">
           <img src="assets/images/control-acc.png" alt="Teaser for ACC 2024" loading="lazy">
         </a>
         <div class="info">
@@ -618,14 +718,14 @@
           <p class="meta"><b>Venue/Year:</b> ACC 2024</p>
           <p>Dongming Wang, Shaoshu Su, Wei Ren, <b>Ce Hao</b></p>
           <div class="actions">
-            <a class="btn" href="https://ieeexplore.ieee.org/abstract/document/10186557" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://ieeexplore.ieee.org/document/10644155" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
 
       <!-- 2023 -->
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://ieeexplore.ieee.org/abstract/document/10186557" target="_blank" rel="noopener" aria-label="IV 2023 paper">
           <img src="assets/images/oneline-learning.jpg" alt="Teaser for Online Learning IV 2023" loading="lazy">
         </a>
         <div class="info">
@@ -639,42 +739,42 @@
       </article>
 
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://arxiv.org/abs/2305.07740" target="_blank" rel="noopener" aria-label="Double-Iterative Gaussian Process Regression paper">
           <img src="assets/images/GPR-racing.jpg" alt="Teaser for GPR Racing IFAC 2023" loading="lazy">
         </a>
         <div class="info">
           <h3>Double-Iterative Gaussian Process Regression for Modeling Error Compensation in Autonomous Racing</h3>
-          <p class="meta"><b>Venue/Year:</b> IFAC 2023</p>
+          <p class="meta"><b>Venue/Year:</b> IFAC World Congress 2023</p>
           <p>Shaoshu Su, <b>Ce Hao</b>, Catherine Weaver, Chen Tang, Wei Zhan, Masayoshi Tomizuka</p>
           <div class="actions">
-            <a class="btn" href="https://arxiv.org/pdf/2305.07740" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://arxiv.org/abs/2305.07740" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
 
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://arxiv.org/abs/2211.09378" target="_blank" rel="noopener" aria-label="Outracing Human Racers paper">
           <img src="assets/images/GTS.gif" alt="Teaser for GTS Racing" loading="lazy">
         </a>
         <div class="info">
           <h3>Outracing Human Racers with Model-based Planning and Control for Time-Trial Racing</h3>
-          <p class="meta"><b>Venue/Year:</b> Sony AI project 2023</p>
+          <p class="meta"><b>Venue/Year:</b> arXiv 2022</p>
           <p><b>Ce Hao</b>, Chen Tang, Eric Bergkvist, Catherine Weaver, Liting Sun, Wei Zhan, Masayoshi Tomizuka</p>
           <div class="actions">
-            <a class="btn" href="https://arxiv.org/pdf/2211.09378" target="_blank" rel="noopener">Paper</a>
+            <a class="btn" href="https://arxiv.org/abs/2211.09378" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
 
       <!-- 2020 -->
       <article class="proj">
-        <a class="teaser" href="#" aria-label="Project website">
+        <a class="teaser" href="https://journals.sagepub.com/doi/full/10.1177/1729881420918461" target="_blank" rel="noopener" aria-label="Predictive Artificial Potential Field paper">
           <img src="assets/images/potential-field.jpg" alt="APF" loading="lazy">
         </a>
         <div class="info">
           <h3>Path Planning for Unmanned Surface Vehicle Based on Predictive Artificial Potential Field</h3>
           <p class="meta"><b>Venue/Year:</b> International Journal of Advanced Robotic Systems 2020</p>
-          <p><b>Ce Hao</b>, Jiangcheng Su, Jia Song</p>
+          <p>Jia Song, <b>Ce Hao<sup>✝</sup></b>, Jiangcheng Su</p>
           <div class="actions">
             <a class="btn" href="https://journals.sagepub.com/doi/full/10.1177/1729881420918461" target="_blank" rel="noopener">Paper</a>
           </div>
